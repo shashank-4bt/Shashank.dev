@@ -1,0 +1,105 @@
+/** Curated catalog, aliases, and optional overrides. GitHub evidence still wins. */
+
+export const OWNER = 'shashank-4bt';
+
+export const featuredByRepo = {
+  QuantLab: { name: 'QuantLab', href: '#project-quantlab' },
+  Mercury: { name: 'Mercury', href: '#project-mercury' },
+  Knowlyy: { name: 'Knowlyy', href: '#project-knowlyy' },
+  'SIH-1454-Phishing-Domain-Detection': {
+    name: 'PhishEye',
+    href: '#project-phisheye',
+  },
+  FUNDMATCH: { name: 'FundMatch', href: '#project-fundmatch' },
+};
+
+export const repoDisplayNames = {
+  QuantLab: 'QuantLab',
+  Mercury: 'Mercury',
+  Knowlyy: 'Knowlyy',
+  'SIH-1454-Phishing-Domain-Detection': 'PhishEye',
+  FUNDMATCH: 'FundMatch',
+  'Trash-Track': 'Trash-Track',
+  Skillyn: 'Skillyn',
+  PaceFlow: 'PaceFlow',
+  scenecast: 'Scenecast',
+  Essential_Webpgs: 'Essential Web Pages',
+  Android_Development: 'Android Development',
+  NetPulse: 'NetPulse',
+  Trackly: 'Trackly',
+};
+
+export const catalog = [
+  'C',
+  'C++',
+  'Python',
+  'Java',
+  'Kotlin',
+  'JavaScript',
+  'TypeScript',
+  'SQL',
+  'HTML',
+  'CSS',
+  'React',
+  'Tailwind CSS',
+  'Vite',
+  'Node.js',
+  'Express.js',
+  'FastAPI',
+  'Django',
+  'REST APIs',
+  'JWT',
+  'Authentication & Authorization',
+  'PostgreSQL',
+  'MongoDB',
+  'SQLite',
+  'DuckDB',
+  'Prisma',
+  'Mongoose',
+  'Parquet',
+  'Scikit-learn',
+  'XGBoost',
+  'CatBoost',
+  'PyTorch',
+  'MLflow',
+  'Quantitative Research',
+  'Algorithmic Trading',
+  'Event-Driven Systems',
+  'Backtesting',
+  'Portfolio Construction',
+  'Risk Analytics',
+  'Market Data',
+  'NumPy',
+  'Pandas',
+  'SciPy',
+  'Numba',
+  'Statsmodels',
+  'Firecrawl',
+  'Web/Data Crawling',
+  'API Integration',
+  'Data Cleaning',
+  'Data Pipelines',
+  'Docker',
+  'Docker Compose',
+  'Git',
+  'GitHub',
+  'GitHub Actions',
+  'CI/CD',
+  'Vercel',
+  'Testing',
+  'API Design',
+  'System Architecture',
+  'Database Design',
+  'Security',
+  'Input Validation',
+  'Performance Optimization',
+  'Responsive UI/UX',
+];
+
+/**
+ * Extra skills only when already confirmed on the site and GitHub cannot see them.
+ * Do not invent stacks here.
+ */
+export const skillOverrides = {
+  Knowlyy: ['Kotlin'],
+};
