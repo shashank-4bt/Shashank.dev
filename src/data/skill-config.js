@@ -23,10 +23,10 @@ export const repoDisplayNames = {
   Skillyn: 'Skillyn',
   PaceFlow: 'PaceFlow',
   scenecast: 'Scenecast',
-  Essential_Webpgs: 'Essential Web Pages',
   Android_Development: 'Android Development',
   NetPulse: 'NetPulse',
   Trackly: 'Trackly',
+  'Shashank.dev': 'SHASHANK.DEV',
 };
 
 export const catalog = [

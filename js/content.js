@@ -1,4 +1,5 @@
-import { now, timeline } from '../src/data/site.js';
+import { now, timeline, techMatrix } from '../src/data/site.js';
+import { githubProfile, otherWork } from '../src/data/github-profile.js';
 
 function escapeHtml(value) {
   return String(value)
@@ -41,10 +42,55 @@ function renderTimeline(root) {
     <ol class="timeline__list">${items}</ol>`;
 }
 
+function renderMatrix(root) {
+  const head = `<tr><th scope="col">Technology</th>${techMatrix.projects
+    .map((name) => `<th scope="col">${escapeHtml(name)}</th>`)
+    .join('')}</tr>`;
+  const body = techMatrix.rows
+    .map((row) => {
+      const cells = row.marks
+        .map((on) => `<td>${on ? '●' : '○'}</td>`)
+        .join('');
+      return `<tr><th scope="row">${escapeHtml(row.skill)}</th>${cells}</tr>`;
+    })
+    .join('');
+  root.innerHTML = `<table class="matrix"><caption>Verified featured-project usage. ● used · ○ not a primary technology. Not a proficiency score.</caption><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+
+function renderOtherWork(root) {
+  root.innerHTML = otherWork
+    .map((repo) => {
+      const host = repo.url.replace(/^https:\/\//, '');
+      return `<tr>
+        <th scope="row">${escapeHtml(repo.name)}</th>
+        <td><a href="${escapeHtml(repo.url)}" rel="noopener noreferrer" target="_blank">${escapeHtml(host)}</a></td>
+      </tr>`;
+    })
+    .join('');
+}
+
+function applyGithubLinks() {
+  const label = `github.com/${githubProfile.login}`;
+  document.querySelectorAll('[data-github-link]').forEach((link) => {
+    link.href = githubProfile.url;
+    if (link.hasAttribute('data-github-label')) {
+      link.textContent = label;
+    }
+  });
+}
+
 export function hydrateSite() {
   const nowRoot = document.querySelector('[data-now]');
   if (nowRoot) renderNow(nowRoot);
 
   const timelineRoot = document.querySelector('[data-timeline]');
   if (timelineRoot) renderTimeline(timelineRoot);
+
+  const matrix = document.querySelector('[data-matrix]');
+  if (matrix) renderMatrix(matrix);
+
+  const other = document.querySelector('[data-other-work]');
+  if (other) renderOtherWork(other);
+
+  applyGithubLinks();
 }

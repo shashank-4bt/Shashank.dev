@@ -1,4 +1,4 @@
-/** Featured case-study facts. Presentation lives in index.html. */
+/** Featured case-study facts. Keep copy aligned with index.html. */
 
 export const featuredProjects = [
   {
@@ -7,6 +7,27 @@ export const featuredProjects = [
     type: 'Quantitative Research Platform',
     github: 'https://github.com/shashank-4bt/QuantLab',
     live: 'https://quantlab-seven.vercel.app',
+    why: 'Bring data, research, strategy testing, portfolio construction, and risk analysis into one research workflow.',
+    xray: [
+      { label: 'Language', value: 'Python' },
+      { label: 'Architecture', value: 'Event-driven' },
+      { label: 'Data', value: 'DuckDB / SQLite / Parquet' },
+      { label: 'API', value: 'FastAPI' },
+      { label: 'ML', value: 'MLflow / Optuna' },
+    ],
+    decisions: [
+      { q: 'Why a staged path?', a: 'Each research step is explicit: data, features, strategy, backtest, portfolio, risk.' },
+      { q: 'Why DuckDB / Parquet?', a: 'Local columnar storage for research tables without a hosted warehouse.' },
+    ],
+    stages: [
+      { label: 'Market data', note: 'Ingestion and quality handling for research series.' },
+      { label: 'Clean', note: 'Normalise and check the raw feed before features.' },
+      { label: 'Features', note: 'Technical, statistical, and microstructure features.' },
+      { label: 'Strategy', note: 'Systematic strategy research on those features.' },
+      { label: 'Backtest', note: 'Event-driven simulation — not a live performance claim.' },
+      { label: 'Portfolio', note: 'Allocation and construction after the test path.' },
+      { label: 'Risk', note: 'VaR / CVaR, stress, and Monte Carlo as research tools.' },
+    ],
   },
   {
     id: 'mercury',
@@ -14,7 +35,26 @@ export const featuredProjects = [
     type: 'Matching Engine',
     github: 'https://github.com/shashank-4bt/Mercury',
     live: 'https://mercury-matching-engine.vercel.app',
+    why: 'Understand what happens inside an exchange matching engine rather than treating an exchange as a black box.',
     validation: '91 GoogleTest cases',
+    xray: [
+      { label: 'Language', value: 'C++20' },
+      { label: 'Build', value: 'CMake' },
+      { label: 'Testing', value: 'GoogleTest' },
+      { label: 'Benchmark', value: 'Google Benchmark' },
+      { label: 'Core', value: 'Order book' },
+    ],
+    decisions: [
+      { q: 'Why integer ticks?', a: 'Avoid floating-point price errors. Prices are discrete ticks.' },
+      { q: 'Why FIFO?', a: 'Price-time priority: earlier orders at a level fill first.' },
+      { q: 'Why C++20?', a: 'Modern language features with explicit control over the book.' },
+    ],
+    stages: [
+      { label: 'CLI', note: 'Interactive REPL and scripted replay into the exchange.' },
+      { label: 'Exchange', note: 'Accepts orders, cancels, and modifications.' },
+      { label: 'Matching engine', note: 'Applies price-time priority and emits fills.' },
+      { label: 'Order book', note: 'Bids and asks as FIFO queues at each tick.' },
+    ],
   },
   {
     id: 'knowlyy',
@@ -22,6 +62,21 @@ export const featuredProjects = [
     type: 'Social Entertainment Platform',
     github: 'https://github.com/shashank-4bt/Knowlyy',
     status: 'Ongoing / Coming Soon',
+    why: 'Build social interaction around games, prediction, and conversation.',
+    xray: [
+      { label: 'Language', value: 'Kotlin' },
+      { label: 'State', value: 'Ongoing / Coming Soon' },
+      { label: 'Core', value: 'Multiplayer game loop' },
+    ],
+    stages: [
+      { label: 'Create game', note: 'Start a session for a group.' },
+      { label: 'Invite friends', note: 'Share a join path into the same game.' },
+      { label: 'Play', note: 'Run one of the party or prediction formats.' },
+      { label: 'Answer', note: 'Players submit responses in the round.' },
+      { label: 'Reveal', note: 'Show what people actually said.' },
+      { label: 'Results', note: 'Score and social insight for that game.' },
+      { label: 'Share', note: 'Take the result out of the session.' },
+    ],
   },
   {
     id: 'phisheye',
@@ -29,6 +84,22 @@ export const featuredProjects = [
     type: 'Phishing-Domain Detection',
     github: 'https://github.com/shashank-4bt/SIH-1454-Phishing-Domain-Detection',
     context: 'Team project. Represented at Lenovo LEAP Hackathon 2026.',
+    why: 'Inspect a suspicious URL as structure, infrastructure, content, and a model score — not a single signal.',
+    xray: [
+      { label: 'Languages', value: 'TypeScript / Python' },
+      { label: 'API', value: 'FastAPI' },
+      { label: 'Data', value: 'PostgreSQL' },
+      { label: 'ML', value: 'Scikit-learn' },
+    ],
+    stages: [
+      { label: 'URL', note: 'Parse the submitted address into parts.' },
+      { label: 'Domain', note: 'Inspect the registered name and lookalikes.' },
+      { label: 'DNS', note: 'Resolve infrastructure records.' },
+      { label: 'SSL', note: 'Read the TLS certificate surface.' },
+      { label: 'Content', note: 'Look at the fetched page as evidence.' },
+      { label: 'ML', note: 'Classify from extracted features. No accuracy claim here.' },
+      { label: 'Risk', note: 'Combine layers into a schematic risk view.' },
+    ],
   },
   {
     id: 'fundmatch',
@@ -36,5 +107,17 @@ export const featuredProjects = [
     type: 'Startup Scheme Discovery',
     github: 'https://github.com/shashank-4bt/FUNDMATCH',
     context: 'Hack-E-Awadh 2026, Lucknow. Built and presented within one day at the venue.',
+    why: 'Help a founder see which government schemes they may be eligible for, and what to do next.',
+    xray: [
+      { label: 'Languages', value: 'TypeScript / Python' },
+      { label: 'Context', value: 'One-day venue prototype' },
+      { label: 'Core', value: 'Eligibility → match → roadmap' },
+    ],
+    stages: [
+      { label: 'Startup', note: 'Take a founder profile as input.' },
+      { label: 'Eligibility', note: 'Check constraints against scheme rules.' },
+      { label: 'Scheme match', note: 'Surface schemes that fit those constraints.' },
+      { label: 'Roadmap', note: 'List application steps. No funding amounts claimed.' },
+    ],
   },
 ];

@@ -1,11 +1,12 @@
-/** Single source for identity, Now, map, process, timeline, and contact. */
+/** Single source for identity, Now, map, process, and timeline. */
 
 export const site = {
   name: 'Shashank Kumar Singh',
   wordmark: 'SHASHANK.DEV',
   url: 'https://shashank.dev',
-  githubRepo: 'https://github.com/shashank-4bt/shashank.dev',
+  githubRepo: 'https://github.com/shashank-4bt/Shashank.dev',
   github: 'https://github.com/shashank-4bt',
+  githubLabel: 'github.com/shashank-4bt',
   linkedin: 'https://www.linkedin.com/in/shashank-kumar-singh-a8aa9930a/',
   email: 'singhshashankcse@gmail.com',
   phone: '+91 7897947999',
@@ -14,6 +15,7 @@ export const site = {
   title: 'Shashank Kumar Singh — Software Engineer · Quantitative Developer',
   description:
     'Software engineer and quantitative developer building software systems, research platforms, products, and technical experiments.',
+  location: 'India',
 };
 
 export const now = [
@@ -91,5 +93,29 @@ export const systemMap = {
       project: { name: 'QuantLab', href: '#project-quantlab' },
       related: ['Backtesting', 'Portfolio construction', 'Risk analytics', 'Market data'],
     },
+  ],
+};
+
+/** Featured-project links only. Built from skill-usage.js evidence, not inference. */
+export const graphLinks = [
+  { tech: 'C++', projects: ['mercury'] },
+  { tech: 'Python', projects: ['quantlab', 'phisheye', 'fundmatch'] },
+  { tech: 'Kotlin', projects: ['knowlyy'] },
+  { tech: 'TypeScript', projects: ['fundmatch'] },
+  { tech: 'React', projects: ['phisheye', 'fundmatch'] },
+  { tech: 'FastAPI', projects: ['quantlab', 'phisheye'] },
+];
+
+export const techMatrix = {
+  projects: ['QuantLab', 'Mercury', 'Knowlyy', 'PhishEye', 'FundMatch'],
+  rows: [
+    { skill: 'Python', marks: [true, false, false, true, true] },
+    { skill: 'C++', marks: [false, true, false, false, false] },
+    { skill: 'Kotlin', marks: [false, false, true, false, false] },
+    { skill: 'TypeScript', marks: [false, false, false, false, true] },
+    { skill: 'React', marks: [false, false, false, true, true] },
+    { skill: 'FastAPI', marks: [true, false, false, true, false] },
+    { skill: 'Scikit-learn', marks: [true, false, false, false, false] },
+    { skill: 'DuckDB', marks: [true, false, false, false, false] },
   ],
 };

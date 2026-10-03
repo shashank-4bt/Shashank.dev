@@ -4,6 +4,11 @@ import { initStructureFlow } from './structure-flow.js';
 import { hydrateSite } from './content.js';
 import { initSystemMap } from './system-map.js';
 import { initLab } from './lab.js';
+import { initExplorers } from './explore.js';
+import { initIntro } from './intro.js';
+import { initRail } from './rail.js';
+import { initTerminal } from './terminal.js';
+import { initGraph } from './graph.js';
 import { skillUsage } from '../src/data/skill-usage.js';
 
 function prefersReducedMotion() {
@@ -85,8 +90,10 @@ function initActiveNav() {
   const map = [
     { id: 'hero', hash: '#hero' },
     { id: 'work', hash: '#work' },
-    { id: 'lab', hash: '#lab' },
+    { id: 'system-map', hash: '#system-map' },
     { id: 'skills', hash: '#skills' },
+    { id: 'lab', hash: '#lab' },
+    { id: 'about', hash: '#about' },
     { id: 'contact', hash: '#contact' },
   ];
 
@@ -264,13 +271,18 @@ function initMagnetic() {
 }
 
 hydrateSite();
+initIntro();
 initHeader();
 initNav();
 initActiveNav();
+initRail();
 initReveals();
 initSkills();
 initSystemMap();
+initGraph();
+initExplorers();
 initLab();
+initTerminal();
 initMagnetic();
 initMarks();
 initStructureFlow();

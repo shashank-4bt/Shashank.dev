@@ -48,6 +48,30 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <div class="boot" data-boot hidden>
+      <p class="boot__mark">SHASHANK.DEV</p>
+      <p class="boot__state">Initializing</p>
+      <ul class="boot__list">
+        <li>Systems <span aria-hidden="true">✓</span></li>
+        <li>Projects <span aria-hidden="true">✓</span></li>
+        <li>Experiments <span aria-hidden="true">✓</span></li>
+        <li>Curiosity <span aria-hidden="true">✓</span></li>
+      </ul>
+      <p class="boot__ready">Ready.</p>
+      <button type="button" class="boot__skip" data-boot-skip>Skip</button>
+    </div>
+
+    <nav class="rail" data-rail aria-label="Section index">
+      <a href="#hero">01</a>
+      <a href="#now">02</a>
+      <a href="#work">03</a>
+      <a href="#system-map">04</a>
+      <a href="#skills">05</a>
+      <a href="#lab">06</a>
+      <a href="#about">07</a>
+      <a href="#contact">08</a>
+    </nav>
+
     <header class="site-header" data-header>
       <div class="site-header__bar">
         <a class="wordmark" href="#hero">SHASHANK.DEV</a>
@@ -66,10 +90,12 @@
         </button>
         <nav class="nav" id="primary-nav" data-nav aria-label="Primary">
           <ul class="nav__list">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#lab">Lab</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#work">01 Work</a></li>
+            <li><a href="#system-map">02 Systems</a></li>
+            <li><a href="#skills">03 Capabilities</a></li>
+            <li><a href="#lab">04 Lab</a></li>
+            <li><a href="#about">05 About</a></li>
+            <li><a href="#contact">06 Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -83,7 +109,7 @@
         <div class="hero__grid">
           <div class="hero__kicker">
             <p class="section-index">01 — Identity</p>
-            <p class="hero__sys" aria-hidden="true">01 / 11 · SHASHANK.DEV</p>
+            <p class="hero__sys" aria-hidden="true">System / 001 · State / Active · Build / SHASHANK.DEV · Location / India</p>
           </div>
           <h1 id="hero-name" class="hero__name">
             <span>Shashank</span>
@@ -151,43 +177,9 @@
         </dl>
       </section>
 
-      <section class="section about" id="about" aria-labelledby="about-title">
-        <div class="section__head">
-          <p class="section-index">03 — About</p>
-          <h2 id="about-title">A student who builds systems</h2>
-        </div>
-        <div class="about__body">
-          <p>
-            Shashank Kumar Singh is a software engineering student and builder. The work here is
-            about making structure hold under load — in code, in data, and in the interfaces people
-            actually use.
-          </p>
-          <p>
-            Interests sit across software engineering, quantitative systems, AI/ML, backend
-            engineering, full-stack products, algorithmic trading, and data-intensive systems. The
-            common thread is not a stack. It is the habit of decomposing a problem until the moving
-            parts are explicit, then assembling something that can be tested.
-          </p>
-          <p>
-            This site is a notebook of that practice: research platforms, matching logic, social
-            products, security analysis, and one-day prototype work — presented as they are, without
-            a performance overlay.
-          </p>
-        </div>
-        <ul class="about__index" aria-label="Focus areas">
-          <li>Software engineering</li>
-          <li>Quantitative systems</li>
-          <li>AI / Machine learning</li>
-          <li>Backend engineering</li>
-          <li>Full-stack products</li>
-          <li>Algorithmic trading</li>
-          <li>Data-intensive systems</li>
-        </ul>
-      </section>
-
       <section class="section work" id="work" aria-labelledby="work-title">
         <div class="section__head">
-          <p class="section-index">04 — Selected work</p>
+          <p class="section-index">03 — Selected work</p>
           <h2 id="work-title">Five artifacts, five structures</h2>
           <p class="section__lede">
             Each case study uses a different composition. Visuals are schematic — they describe
@@ -204,6 +196,13 @@
           <div class="project__layout">
             <div class="project__copy">
               <dl class="study">
+                <div class="study__row">
+                  <dt>Why</dt>
+                  <dd>
+                    Bring data, research, strategy testing, portfolio construction, and risk analysis
+                    into one research workflow.
+                  </dd>
+                </div>
                 <div class="study__row">
                   <dt>Problem</dt>
                   <dd>
@@ -246,8 +245,27 @@
                   </dd>
                 </div>
               </dl>
+              <dl class="xray">
+                <div class="xray__head">Repository x-ray</div>
+                <div><dt>Language</dt><dd>Python</dd></div>
+                <div><dt>Architecture</dt><dd>Event-driven</dd></div>
+                <div><dt>Data</dt><dd>DuckDB / SQLite / Parquet</dd></div>
+                <div><dt>API</dt><dd>FastAPI</dd></div>
+                <div><dt>ML</dt><dd>MLflow / Optuna</dd></div>
+              </dl>
+              <dl class="decisions">
+                <div class="xray__head">Decision log</div>
+                <div>
+                  <dt>Why a staged path?</dt>
+                  <dd>Each research step is explicit: data, features, strategy, backtest, portfolio, risk.</dd>
+                </div>
+                <div>
+                  <dt>Why DuckDB / Parquet?</dt>
+                  <dd>Local columnar storage for research tables without a hosted warehouse.</dd>
+                </div>
+              </dl>
             </div>
-            <figure class="viz viz--pipeline" aria-labelledby="quantlab-viz-caption">
+            <figure class="viz viz--pipeline" data-explorer aria-labelledby="quantlab-viz-caption">
               <figcaption id="quantlab-viz-caption" class="viz__caption">
                 Illustrative research path · not live market data
               </figcaption>
@@ -256,14 +274,17 @@
                 <path class="series__b" d="M0 36 C 20 40, 40 30, 64 34 S 110 52, 140 38 S 190 16, 220 32 S 270 50, 320 42" />
               </svg>
               <ol class="flow-col" data-flow>
-                <li>Market data</li>
-                <li>Clean</li>
-                <li>Features</li>
-                <li>Strategy</li>
-                <li>Backtest</li>
-                <li>Portfolio</li>
-                <li>Risk</li>
+                <li><button type="button" data-stage data-note="Ingestion and quality handling for research series.">Market data</button></li>
+                <li><button type="button" data-stage data-note="Normalise and check the raw feed before features.">Clean</button></li>
+                <li><button type="button" data-stage data-note="Technical, statistical, and microstructure features.">Features</button></li>
+                <li><button type="button" data-stage data-note="Systematic strategy research on those features.">Strategy</button></li>
+                <li><button type="button" data-stage data-note="Event-driven simulation — not a live performance claim.">Backtest</button></li>
+                <li><button type="button" data-stage data-note="Allocation and construction after the test path.">Portfolio</button></li>
+                <li><button type="button" data-stage data-note="VaR / CVaR, stress, and Monte Carlo as research tools.">Risk</button></li>
               </ol>
+              <div class="stage-out" data-stage-out aria-live="polite">
+                <p>Select a stage.</p>
+              </div>
               <p class="viz__note">Schematic strategy labels: signal · size · risk · not live performance</p>
             </figure>
           </div>
@@ -276,37 +297,53 @@
             <h3 class="project__title">Mercury</h3>
           </header>
           <div class="project__layout project__layout--reverse">
-            <figure class="viz viz--book" aria-labelledby="mercury-viz-caption">
+            <figure class="viz viz--book" data-mercury-book data-explorer aria-labelledby="mercury-viz-caption">
               <figcaption id="mercury-viz-caption" class="viz__caption">
                 Schematic book · illustrative prices · not a live market
               </figcaption>
-              <div class="book">
-                <p class="book__side-label">Ask</p>
-                <div class="book__row book__row--ask">
-                  <span>101.20</span><span>300</span><span class="book__bar" style="--w: 60%"></span>
+              <div class="book" data-book></div>
+              <form class="lab__form" data-book-form>
+                <label>
+                  Side
+                  <select name="side">
+                    <option value="buy">Buy</option>
+                    <option value="sell">Sell</option>
+                  </select>
+                </label>
+                <label>
+                  Limit
+                  <input name="price" type="number" inputmode="decimal" step="0.01" value="100.95" />
+                </label>
+                <label>
+                  Qty
+                  <input name="qty" type="number" inputmode="numeric" min="1" step="1" value="50" />
+                </label>
+                <div class="lab__actions">
+                  <button type="submit">Insert</button>
+                  <button type="button" data-book-cancel>Cancel last</button>
+                  <button type="button" data-book-modify>Modify last</button>
+                  <button type="button" data-book-reset>Reset</button>
                 </div>
-                <div class="book__row book__row--ask">
-                  <span>101.10</span><span>150</span><span class="book__bar" style="--w: 30%"></span>
-                </div>
-                <p class="book__spread">Spread</p>
-                <div class="book__row book__row--bid">
-                  <span>100.90</span><span>200</span><span class="book__bar" style="--w: 40%"></span>
-                </div>
-                <div class="book__row book__row--bid">
-                  <span>100.80</span><span>500</span><span class="book__bar" style="--w: 100%"></span>
-                </div>
-                <p class="book__side-label">Bid</p>
-              </div>
+              </form>
+              <ol class="lab__log" data-book-log></ol>
               <ol class="flow-row" data-flow>
-                <li>CLI</li>
-                <li>Exchange</li>
-                <li>Matching engine</li>
-                <li>Order book</li>
+                <li><button type="button" data-stage data-note="Interactive REPL and scripted replay into the exchange.">CLI</button></li>
+                <li><button type="button" data-stage data-note="Accepts orders, cancels, and modifications.">Exchange</button></li>
+                <li><button type="button" data-stage data-note="Applies price-time priority and emits fills.">Matching engine</button></li>
+                <li><button type="button" data-stage data-note="Bids and asks as FIFO queues at each tick.">Order book</button></li>
               </ol>
+              <div class="stage-out" data-stage-out aria-live="polite"><p>Select a stage.</p></div>
               <p class="viz__note">Price-time priority · FIFO at each level</p>
             </figure>
             <div class="project__copy">
               <dl class="study">
+                <div class="study__row">
+                  <dt>Why</dt>
+                  <dd>
+                    Understand what happens inside an exchange matching engine rather than treating an
+                    exchange as a black box.
+                  </dd>
+                </div>
                 <div class="study__row">
                   <dt>Problem</dt>
                   <dd>
@@ -342,6 +379,20 @@
                   </dd>
                 </div>
               </dl>
+              <dl class="xray">
+                <div class="xray__head">Repository x-ray</div>
+                <div><dt>Language</dt><dd>C++20</dd></div>
+                <div><dt>Build</dt><dd>CMake</dd></div>
+                <div><dt>Testing</dt><dd>GoogleTest</dd></div>
+                <div><dt>Benchmark</dt><dd>Google Benchmark</dd></div>
+                <div><dt>Core</dt><dd>Order book</dd></div>
+              </dl>
+              <dl class="decisions">
+                <div class="xray__head">Decision log</div>
+                <div><dt>Why integer ticks?</dt><dd>Avoid floating-point price errors. Prices are discrete ticks.</dd></div>
+                <div><dt>Why FIFO?</dt><dd>Price-time priority: earlier orders at a level fill first.</dd></div>
+                <div><dt>Why C++20?</dt><dd>Modern language features with explicit control over the book.</dd></div>
+              </dl>
             </div>
           </div>
         </article>
@@ -355,20 +406,25 @@
           </header>
           <p class="status-line">Coming soon to the Play Store</p>
           <div class="project__layout project__layout--loop">
-            <figure class="viz viz--loop" aria-labelledby="knowlyy-viz-caption">
+            <figure class="viz viz--loop" data-explorer aria-labelledby="knowlyy-viz-caption">
               <figcaption id="knowlyy-viz-caption" class="viz__caption">Core loop</figcaption>
               <ol class="loop">
-                <li>Create game</li>
-                <li>Invite friends</li>
-                <li>Play</li>
-                <li>Answer</li>
-                <li>Reveal</li>
-                <li>Results</li>
-                <li>Share</li>
+                <li><button type="button" data-stage data-note="Start a session for a group.">Create game</button></li>
+                <li><button type="button" data-stage data-note="Share a join path into the same game.">Invite friends</button></li>
+                <li><button type="button" data-stage data-note="Run one of the party or prediction formats.">Play</button></li>
+                <li><button type="button" data-stage data-note="Players submit responses in the round.">Answer</button></li>
+                <li><button type="button" data-stage data-note="Show what people actually said.">Reveal</button></li>
+                <li><button type="button" data-stage data-note="Score and social insight for that game.">Results</button></li>
+                <li><button type="button" data-stage data-note="Take the result out of the session.">Share</button></li>
               </ol>
+              <div class="stage-out" data-stage-out aria-live="polite"><p>Select a stage.</p></div>
             </figure>
             <div class="project__copy">
               <dl class="study">
+                <div class="study__row">
+                  <dt>Why</dt>
+                  <dd>Build social interaction around games, prediction, and conversation.</dd>
+                </div>
                 <div class="study__row">
                   <dt>Problem</dt>
                   <dd>
@@ -402,6 +458,12 @@
                   </dd>
                 </div>
               </dl>
+              <dl class="xray">
+                <div class="xray__head">Repository x-ray</div>
+                <div><dt>Language</dt><dd>Kotlin</dd></div>
+                <div><dt>State</dt><dd>Ongoing / Coming Soon</dd></div>
+                <div><dt>Core</dt><dd>Multiplayer game loop</dd></div>
+              </dl>
               <h4>Games</h4>
               <ul class="dense-list dense-list--inline">
                 <li>How Well Do You Know Me?</li>
@@ -434,6 +496,13 @@
           <div class="project__layout">
             <div class="project__copy">
               <dl class="study">
+                <div class="study__row">
+                  <dt>Why</dt>
+                  <dd>
+                    Inspect a suspicious URL as structure, infrastructure, content, and a model score —
+                    not a single signal.
+                  </dd>
+                </div>
                 <div class="study__row">
                   <dt>Problem</dt>
                   <dd>
@@ -476,20 +545,28 @@
                   </dd>
                 </div>
               </dl>
+              <dl class="xray">
+                <div class="xray__head">Repository x-ray</div>
+                <div><dt>Languages</dt><dd>TypeScript / Python</dd></div>
+                <div><dt>API</dt><dd>FastAPI</dd></div>
+                <div><dt>Data</dt><dd>PostgreSQL</dd></div>
+                <div><dt>ML</dt><dd>Scikit-learn</dd></div>
+              </dl>
             </div>
-            <figure class="viz viz--layers" aria-labelledby="phisheye-viz-caption">
+            <figure class="viz viz--layers" data-explorer aria-labelledby="phisheye-viz-caption">
               <figcaption id="phisheye-viz-caption" class="viz__caption">
                 Detection layers · schematic scoring · no accuracy claims
               </figcaption>
               <ol class="layers" data-flow>
-                <li>URL</li>
-                <li>Domain</li>
-                <li>DNS</li>
-                <li>SSL</li>
-                <li>Content</li>
-                <li>ML</li>
-                <li class="layers__sink">Risk</li>
+                <li><button type="button" data-stage data-note="Parse the submitted address into parts.">URL</button></li>
+                <li><button type="button" data-stage data-note="Inspect the registered name and lookalikes.">Domain</button></li>
+                <li><button type="button" data-stage data-note="Resolve infrastructure records.">DNS</button></li>
+                <li><button type="button" data-stage data-note="Read the TLS certificate surface.">SSL</button></li>
+                <li><button type="button" data-stage data-note="Look at the fetched page as evidence.">Content</button></li>
+                <li><button type="button" data-stage data-note="Classify from extracted features. No accuracy claim here.">ML</button></li>
+                <li class="layers__sink"><button type="button" data-stage data-note="Combine layers into a schematic risk view.">Risk</button></li>
               </ol>
+              <div class="stage-out" data-stage-out aria-live="polite"><p>Select a layer.</p></div>
             </figure>
           </div>
         </article>
@@ -504,6 +581,13 @@
           <div class="project__layout">
             <div class="project__copy">
               <dl class="study">
+                <div class="study__row">
+                  <dt>Why</dt>
+                  <dd>
+                    Help a founder see which government schemes they may be eligible for, and what to
+                    do next.
+                  </dd>
+                </div>
                 <div class="study__row">
                   <dt>Problem</dt>
                   <dd>
@@ -537,15 +621,22 @@
                   </dd>
                 </div>
               </dl>
+              <dl class="xray">
+                <div class="xray__head">Repository x-ray</div>
+                <div><dt>Languages</dt><dd>TypeScript / Python</dd></div>
+                <div><dt>Context</dt><dd>One-day venue prototype</dd></div>
+                <div><dt>Core</dt><dd>Eligibility → match → roadmap</dd></div>
+              </dl>
             </div>
-            <figure class="viz" aria-labelledby="fundmatch-viz-caption">
+            <figure class="viz" data-explorer aria-labelledby="fundmatch-viz-caption">
               <figcaption id="fundmatch-viz-caption" class="viz__caption">Scheme path · conceptual</figcaption>
               <ol class="flow-col" data-flow>
-                <li>Startup</li>
-                <li>Eligibility</li>
-                <li>Scheme match</li>
-                <li>Roadmap</li>
+                <li><button type="button" data-stage data-note="Take a founder profile as input.">Startup</button></li>
+                <li><button type="button" data-stage data-note="Check constraints against scheme rules.">Eligibility</button></li>
+                <li><button type="button" data-stage data-note="Surface schemes that fit those constraints.">Scheme match</button></li>
+                <li><button type="button" data-stage data-note="List application steps. No funding amounts claimed.">Roadmap</button></li>
               </ol>
+              <div class="stage-out" data-stage-out aria-live="polite"><p>Select a stage.</p></div>
             </figure>
           </div>
         </article>
@@ -553,7 +644,7 @@
 
       <section class="section sys" id="system-map" aria-labelledby="sysmap-title">
         <div class="section__head">
-          <p class="section-index">05 — System map</p>
+          <p class="section-index">04 — System map</p>
           <h2 id="sysmap-title">Engineering system map</h2>
           <p class="section__lede">
             How the work connects. Hover, focus, or select a node. Related technologies stay on the
@@ -593,11 +684,30 @@
             </p>
           </aside>
         </div>
+        <div class="graph" data-graph>
+          <p class="graph__label">Technology → featured work</p>
+          <div class="graph__techs">
+            <button type="button" data-tech="C++">C++</button>
+            <button type="button" data-tech="Python">Python</button>
+            <button type="button" data-tech="Kotlin">Kotlin</button>
+            <button type="button" data-tech="TypeScript">TypeScript</button>
+            <button type="button" data-tech="React">React</button>
+            <button type="button" data-tech="FastAPI">FastAPI</button>
+          </div>
+          <div class="graph__projects">
+            <a href="#project-quantlab" data-graph-project="quantlab">QuantLab</a>
+            <a href="#project-mercury" data-graph-project="mercury">Mercury</a>
+            <a href="#project-knowlyy" data-graph-project="knowlyy">Knowlyy</a>
+            <a href="#project-phisheye" data-graph-project="phisheye">PhishEye</a>
+            <a href="#project-fundmatch" data-graph-project="fundmatch">FundMatch</a>
+          </div>
+        </div>
+        <div class="ledger-wrap" data-matrix></div>
       </section>
 
       <section class="section experiments" id="experiments" aria-labelledby="experiments-title">
         <div class="section__head">
-          <p class="section-index">06 — Other work</p>
+          <p class="section-index">05 — Other work</p>
           <h2 id="experiments-title">Experiments &amp; repositories</h2>
           <p class="section__lede">Index only. No unstated functionality.</p>
         </div>
@@ -609,47 +719,11 @@
                 <th scope="col">Repository</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-other-work>
               <tr>
                 <th scope="row">Trash-Track</th>
                 <td>
                   <a href="https://github.com/shashank-4bt/Trash-Track" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Trash-Track</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Skillyn</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/Skillyn" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Skillyn</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">PaceFlow</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/PaceFlow" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/PaceFlow</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Scenecast</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/scenecast" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/scenecast</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Essential_Webpgs</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/Essential_Webpgs" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Essential_Webpgs</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Android_Development</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/Android_Development" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Android_Development</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">NetPulse</th>
-                <td>
-                  <a href="https://github.com/shashank-4bt/NetPulse" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/NetPulse</a>
                 </td>
               </tr>
             </tbody>
@@ -659,8 +733,8 @@
 
       <section class="section skills" id="skills" aria-labelledby="skills-title">
         <div class="section__head">
-          <p class="section-index">07 — Skills</p>
-          <h2 id="skills-title">Technical map</h2>
+          <p class="section-index">06 — Capabilities</p>
+          <h2 id="skills-title">Capabilities</h2>
           <p class="section__lede">
             Select a skill to see repositories that use it — including work beyond the five featured
             case studies. Empty means no repository is currently mapped, not that the skill is unused.
@@ -790,7 +864,7 @@
 
       <section class="section process" id="process" aria-labelledby="process-title">
         <div class="section__head">
-          <p class="section-index">08 — How I build</p>
+          <p class="section-index">07 — How I build</p>
           <h2 id="process-title">How I build</h2>
           <p class="section__lede">The same sequence, every time: constraints first, interface last.</p>
         </div>
@@ -830,7 +904,7 @@
 
       <section class="section lab" id="lab" aria-labelledby="lab-title">
         <div class="section__head">
-          <p class="section-index">09 — Lab</p>
+          <p class="section-index">08 — Lab</p>
           <h2 id="lab-title">Lab</h2>
           <p class="section__lede">
             Small, working notebooks. Nothing here claims live-market performance or a security verdict.
@@ -849,6 +923,9 @@
             </button>
             <button type="button" role="tab" aria-selected="false" aria-controls="lab-pipe" id="tab-pipe" tabindex="-1">
               Data pipeline
+            </button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="lab-term" id="tab-term" tabindex="-1">
+              Terminal
             </button>
           </div>
 
@@ -876,7 +953,9 @@
                     <input name="qty" type="number" inputmode="numeric" min="1" step="1" value="50" />
                   </label>
                   <div class="lab__actions">
-                    <button type="submit">Submit order</button>
+                    <button type="submit">Insert</button>
+                    <button type="button" data-book-cancel>Cancel last</button>
+                    <button type="button" data-book-modify>Modify last</button>
                     <button type="button" data-book-reset>Reset seed</button>
                   </div>
                 </form>
@@ -932,7 +1011,60 @@
             </ol>
             <div data-pipe-out></div>
           </div>
+
+          <div class="lab__panel" role="tabpanel" id="lab-term" aria-labelledby="tab-term" hidden>
+            <p class="lab__intro">
+              Frontend simulation only. Try <code>whoami</code>, <code>ls projects</code>,
+              <code>help</code>, or <code>sudo coffee</code>.
+            </p>
+            <div class="term__out" data-term-out aria-live="polite"></div>
+            <form class="lab__form lab__form--row" data-term-form>
+              <label>
+                Command
+                <input data-term-input type="text" autocomplete="off" spellcheck="false" placeholder="whoami" />
+              </label>
+              <button type="submit">Run</button>
+            </form>
+          </div>
         </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section__head">
+          <p class="section-index">09 — Operator</p>
+          <h2 id="about-title">A student who builds systems</h2>
+        </div>
+        <div class="about__body">
+          <p>
+            Shashank Kumar Singh is a software engineering student and builder. The work here is
+            about making structure hold under load — in code, in data, and in the interfaces people
+            actually use.
+          </p>
+          <p>
+            Interests sit across software engineering, quantitative systems, AI/ML, backend
+            engineering, full-stack products, algorithmic trading, and data-intensive systems. The
+            common thread is not a stack. It is the habit of decomposing a problem until the moving
+            parts are explicit, then assembling something that can be tested.
+          </p>
+          <p>
+            This site is a notebook of that practice: research platforms, matching logic, social
+            products, security analysis, and one-day prototype work — presented as they are, without
+            a performance overlay.
+          </p>
+          <p class="about__aside">
+            Where ideas become software, caffeine fuels questionable amounts of code, and bugs become
+            undocumented features.
+          </p>
+        </div>
+        <ul class="about__index" aria-label="Focus areas">
+          <li>Software engineering</li>
+          <li>Quantitative systems</li>
+          <li>AI / Machine learning</li>
+          <li>Backend engineering</li>
+          <li>Full-stack products</li>
+          <li>Algorithmic trading</li>
+          <li>Data-intensive systems</li>
+        </ul>
       </section>
 
       <section class="section timeline" id="timeline" aria-labelledby="timeline-title">
@@ -994,7 +1126,14 @@
           <div class="contact__row">
             <dt>GitHub</dt>
             <dd>
-              <a href="https://github.com/shashank-4bt" rel="noopener noreferrer" target="_blank">shashank-4bt</a>
+              <a
+                href="https://github.com/shashank-4bt"
+                rel="noopener noreferrer"
+                target="_blank"
+                data-github-link
+                data-github-label
+                >github.com/shashank-4bt</a
+              >
             </dd>
           </div>
           <div class="contact__row">
@@ -1021,12 +1160,16 @@
     <footer class="site-footer" id="footer">
       <div class="site-footer__identity">
         <p class="site-footer__name">SHASHANK.DEV</p>
-        <p class="site-footer__role">Shashank Kumar Singh · Software Engineer · Quantitative Developer · Builder</p>
+        <p class="site-footer__role">Built with HTML · CSS · JavaScript and an unreasonable number of iterations.</p>
       </div>
+      <p class="site-footer__state">
+        <span class="status__dot" aria-hidden="true"></span>
+        Status / Online
+      </p>
       <p class="site-footer__links">
-        <a href="https://github.com/shashank-4bt" rel="noopener noreferrer" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/shashank-kumar-singh-a8aa9930a/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-        <a href="mailto:singhshashankcse@gmail.com">Email</a>
+        <a href="https://github.com/shashank-4bt" rel="noopener noreferrer" target="_blank" data-github-link>GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/shashank-kumar-singh-a8aa9930a/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
+        <a href="mailto:singhshashankcse@gmail.com">Email ↗</a>
       </p>
       <p class="site-footer__copy">© 2026 Shashank Kumar Singh</p>
     </footer>

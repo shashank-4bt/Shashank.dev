@@ -66,6 +66,29 @@
   text-transform: uppercase;
 }
 
+.flow-col button,
+.flow-row button,
+.layers button,
+.loop button {
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+}
+
+.flow-col button[aria-pressed="true"],
+.flow-row button[aria-pressed="true"],
+.layers button[aria-pressed="true"],
+.loop button[aria-pressed="true"] {
+  color: var(--accent);
+}
+
 .flow-col li::before {
   content: "";
   position: absolute;

@@ -1,3 +1,5 @@
+import { createBook, renderBook } from './book-engine.js';
+
 function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
@@ -90,112 +92,23 @@ function escape(value) {
     .replaceAll('"', '&quot;');
 }
 
-function initBookLab(root) {
+function paintLog(logEl, book) {
+  logEl.innerHTML = book.log
+    .slice(-6)
+    .map((line) => `<li>${escape(line)}</li>`)
+    .join('');
+}
+
+function bindBook(root) {
   const bookEl = root.querySelector('[data-book]');
   const logEl = root.querySelector('[data-book-log]');
   const form = root.querySelector('[data-book-form]');
-  const reset = root.querySelector('[data-book-reset]');
-  if (!bookEl || !logEl || !form) return;
+  if (!bookEl || !form) return;
+  const book = createBook();
 
-  const SEED = [
-    { side: 'sell', price: 10120, qty: 300 },
-    { side: 'sell', price: 10110, qty: 150 },
-    { side: 'buy', price: 10090, qty: 200 },
-    { side: 'buy', price: 10080, qty: 500 },
-  ];
-
-  let nextId = 1;
-  let asks = [];
-  let bids = [];
-  let log = [];
-
-  function fmt(price) {
-    return (price / 100).toFixed(2);
-  }
-
-  function seed() {
-    nextId = 1;
-    asks = [];
-    bids = [];
-    log = ['Reset to schematic seed. Illustrative prices only.'];
-    SEED.forEach((order) => rest(order.side, order.price, order.qty));
-    log = ['Schematic seed loaded. Not a live market.'];
-    render();
-  }
-
-  function rest(side, price, qty) {
-    const order = { id: nextId++, side, price, qty };
-    if (side === 'buy') {
-      bids.push(order);
-      bids.sort((a, b) => b.price - a.price || a.id - b.id);
-    } else {
-      asks.push(order);
-      asks.sort((a, b) => a.price - b.price || a.id - b.id);
-    }
-  }
-
-  function match(side, price, qty) {
-    let remaining = qty;
-    const fills = [];
-
-    if (side === 'buy') {
-      while (remaining > 0 && asks.length && price >= asks[0].price) {
-        const top = asks[0];
-        const take = Math.min(remaining, top.qty);
-        fills.push({ price: top.price, qty: take });
-        top.qty -= take;
-        remaining -= take;
-        if (top.qty === 0) asks.shift();
-      }
-    } else {
-      while (remaining > 0 && bids.length && price <= bids[0].price) {
-        const top = bids[0];
-        const take = Math.min(remaining, top.qty);
-        fills.push({ price: top.price, qty: take });
-        top.qty -= take;
-        remaining -= take;
-        if (top.qty === 0) bids.shift();
-      }
-    }
-
-    return { remaining, fills };
-  }
-
-  function levels(orders) {
-    const map = new Map();
-    orders.forEach((order) => {
-      map.set(order.price, (map.get(order.price) || 0) + order.qty);
-    });
-    return [...map.entries()];
-  }
-
-  function render() {
-    const askLevels = levels(asks).sort((a, b) => b[0] - a[0]);
-    const bidLevels = levels(bids).sort((a, b) => b[0] - a[0]);
-    const maxQty = Math.max(1, ...askLevels.map(([, q]) => q), ...bidLevels.map(([, q]) => q));
-
-    const askRows = askLevels
-      .map(
-        ([price, qty]) =>
-          `<div class="book__row book__row--ask"><span>${fmt(price)}</span><span>${qty}</span><span class="book__bar" style="--w: ${(qty / maxQty) * 100}%"></span></div>`,
-      )
-      .join('');
-    const bidRows = bidLevels
-      .map(
-        ([price, qty]) =>
-          `<div class="book__row book__row--bid"><span>${fmt(price)}</span><span>${qty}</span><span class="book__bar" style="--w: ${(qty / maxQty) * 100}%"></span></div>`,
-      )
-      .join('');
-
-    bookEl.innerHTML = `<p class="book__side-label">Ask</p>${askRows || '<p class="lab__empty">No asks</p>'}
-      <p class="book__spread">Spread</p>
-      ${bidRows || '<p class="lab__empty">No bids</p>'}
-      <p class="book__side-label">Bid</p>`;
-
-    logEl.innerHTML = log
-      .slice(-6)
-      .map((line) => `<li>${escape(line)}</li>`)
-      .join('');
+  function paint() {
+    renderBook(bookEl, book);
+    if (logEl) paintLog(logEl, book);
   }
 
   form.addEventListener('submit', (event) => {
@@ -204,22 +117,26 @@ function initBookLab(root) {
     const price = Math.round(Number(form.price.value) * 100);
     const qty = Math.round(Number(form.qty.value));
     if (!Number.isFinite(price) || !Number.isFinite(qty) || qty <= 0) return;
-
-    const { remaining, fills } = match(side, price, qty);
-    fills.forEach((fill) => {
-      log.push(`Fill ${fill.qty} @ ${fmt(fill.price)}`);
-    });
-    if (remaining > 0) {
-      rest(side, price, remaining);
-      log.push(`Rest ${side} ${remaining} @ ${fmt(price)}`);
-    } else {
-      log.push(`Filled ${side} ${qty} @ limit ${fmt(price)}`);
-    }
-    render();
+    book.submit(side, price, qty);
+    paint();
   });
 
-  reset?.addEventListener('click', seed);
-  seed();
+  root.querySelector('[data-book-reset]')?.addEventListener('click', () => {
+    book.reset();
+    paint();
+  });
+  root.querySelector('[data-book-cancel]')?.addEventListener('click', () => {
+    book.cancelLast();
+    paint();
+  });
+  root.querySelector('[data-book-modify]')?.addEventListener('click', () => {
+    const qty = Math.round(Number(form.qty.value));
+    if (!Number.isFinite(qty) || qty <= 0) return;
+    book.modifyLast(qty);
+    paint();
+  });
+
+  paint();
 }
 
 function gaussian() {
@@ -354,7 +271,8 @@ export function initLab() {
   const mc = root.querySelector('#lab-mc');
   const pipe = root.querySelector('#lab-pipe');
   if (url) initUrlLab(url);
-  if (book) initBookLab(book);
+  if (book) bindBook(book);
   if (mc) initMonteCarlo(mc);
   if (pipe) initPipeline(pipe);
+  document.querySelectorAll('[data-mercury-book]').forEach(bindBook);
 }
