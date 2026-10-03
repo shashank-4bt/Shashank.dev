@@ -17,6 +17,7 @@ const mime = {
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain; charset=utf-8',
   '.ico': 'image/x-icon',
+  '.xml': 'application/xml; charset=utf-8',
 };
 
 function safePath(urlPath) {

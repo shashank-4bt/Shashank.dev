@@ -1,6 +1,9 @@
 import { initScene } from './scene.js';
 import { initMarks } from './logos.js';
 import { initStructureFlow } from './structure-flow.js';
+import { hydrateSite } from './content.js';
+import { initSystemMap } from './system-map.js';
+import { initLab } from './lab.js';
 import { skillUsage } from '../src/data/skill-usage.js';
 
 function prefersReducedMotion() {
@@ -81,8 +84,8 @@ function initActiveNav() {
   const links = [...nav.querySelectorAll('a')];
   const map = [
     { id: 'hero', hash: '#hero' },
-    { id: 'about', hash: '#about' },
     { id: 'work', hash: '#work' },
+    { id: 'lab', hash: '#lab' },
     { id: 'skills', hash: '#skills' },
     { id: 'contact', hash: '#contact' },
   ];
@@ -226,6 +229,21 @@ function initSkills() {
     if (selected) paint(selected, true);
     else placeDetail(null);
   });
+
+  root.addEventListener('keydown', (event) => {
+    const keys = ['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (!keys.includes(event.key)) return;
+    const index = buttons.indexOf(document.activeElement);
+    if (index < 0) return;
+    event.preventDefault();
+    let next = index;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % buttons.length;
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + buttons.length) % buttons.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = buttons.length - 1;
+    buttons[next].focus();
+    paint(buttons[next].getAttribute('data-skill') || '', true);
+  });
 }
 
 function initMagnetic() {
@@ -245,11 +263,14 @@ function initMagnetic() {
   });
 }
 
+hydrateSite();
 initHeader();
 initNav();
 initActiveNav();
 initReveals();
 initSkills();
+initSystemMap();
+initLab();
 initMagnetic();
 initMarks();
 initStructureFlow();

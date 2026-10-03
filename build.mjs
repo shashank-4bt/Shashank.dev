@@ -14,6 +14,9 @@ const entries = [
   'js',
   'fonts',
   'src',
+  'favicon.svg',
+  'robots.txt',
+  'sitemap.xml',
 ];
 
 for (const entry of entries) {
