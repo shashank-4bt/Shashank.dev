@@ -1,0 +1,33 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Hosting and local tooling
+.vercel
+.turbo
+.cache/
+
+# Editor / OS / machine-specific
+.cursor/
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs, temps, local dumps
+*.log
+*.tmp
+*.local
+tmp-*.json
+*.pem
+*.key
+*.p12
+*.pfx

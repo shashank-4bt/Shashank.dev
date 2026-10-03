@@ -1,0 +1,11 @@
+{
+  "name": "shashank-kumar-singh-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "build": "node build.mjs",
+    "start": "node serve.mjs --dist",
+    "update-skills": "node scripts/update-skills.mjs"
+  }
+}
