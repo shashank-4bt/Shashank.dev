@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: shashank-portfolio
+    runtime: static
+    buildCommand: node build.mjs
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
