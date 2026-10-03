@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shashank Kumar Singh — Software Engineer &amp; Builder</title>
+    <meta
+      name="description"
+      content="Portfolio of Shashank Kumar Singh — software engineering, quantitative research, AI/ML, full-stack systems, and experimental products."
+    />
+    <meta property="og:title" content="Shashank Kumar Singh — Software Engineer &amp; Builder" />
+    <meta
+      property="og:description"
+      content="Portfolio of Shashank Kumar Singh — software engineering, quantitative research, AI/ML, full-stack systems, and experimental products."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shashank Kumar Singh — Software Engineer &amp; Builder" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Shashank Kumar Singh — software engineering, quantitative research, AI/ML, full-stack systems, and experimental products."
+    />
+    <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="js/structure-flow.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="site-header__bar">
+        <a class="wordmark" href="#hero">Shashank Kumar Singh</a>
+        <p class="status" aria-label="Current mode">
+          <span class="status__dot" aria-hidden="true"></span>
+          Building / Learning / Experimenting
+        </p>
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <nav class="nav" id="primary-nav" data-nav aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-name">
+        <div class="hero__field" aria-hidden="true">
+          <canvas data-scene></canvas>
+        </div>
+        <div class="hero__grid">
+          <p class="section-index">01 — Identity</p>
+          <h1 id="hero-name" class="hero__name">
+            <span>Shashank</span>
+            <span>Kumar Singh</span>
+          </h1>
+          <p class="hero__role">Software Engineer · Quantitative Developer · Builder</p>
+          <blockquote class="hero__quote">
+            <p>
+              Beyond the glowing screen and lines of logic, code is my craft. It’s not just what I
+              produce; it’s how I break down barriers, refine the imperfect, and engineer a better
+              way forward
+            </p>
+          </blockquote>
+          <p class="hero__meta">
+            <a href="#work">Selected work</a>
+            <span aria-hidden="true"> / </span>
+            <a href="#contact">Contact</a>
+          </p>
+        </div>
+        <p class="hero__coords" data-coords aria-hidden="true">x 0.00 · y 0.00</p>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section__head">
+          <p class="section-index">02 — About</p>
+          <h2 id="about-title">A student who builds systems</h2>
+        </div>
+        <div class="about__body">
+          <p>
+            Shashank Kumar Singh is a software engineering student and builder. The work here is
+            about making structure hold under load — in code, in data, and in the interfaces people
+            actually use.
+          </p>
+          <p>
+            Interests sit across software engineering, quantitative systems, AI/ML, backend
+            engineering, full-stack products, algorithmic trading, and data-intensive systems. The
+            common thread is not a stack. It is the habit of decomposing a problem until the moving
+            parts are explicit, then assembling something that can be tested.
+          </p>
+          <p>
+            This site is a notebook of that practice: research platforms, matching logic, social
+            products, security analysis, and one-day prototype work — presented as they are, without
+            a performance overlay.
+          </p>
+        </div>
+        <ul class="about__index" aria-label="Focus areas">
+          <li>Software engineering</li>
+          <li>Quantitative systems</li>
+          <li>AI / Machine learning</li>
+          <li>Backend engineering</li>
+          <li>Full-stack products</li>
+          <li>Algorithmic trading</li>
+          <li>Data-intensive systems</li>
+        </ul>
+      </section>
+
+      <section class="section work" id="work" aria-labelledby="work-title">
+        <div class="section__head">
+          <p class="section-index">03 — Selected work</p>
+          <h2 id="work-title">Five artifacts, five structures</h2>
+          <p class="section__lede">
+            Each case study uses a different composition. Visuals are schematic — they describe
+            architecture, not measured performance.
+          </p>
+        </div>
+
+        <article class="project project--quantlab" id="project-quantlab">
+          <header class="project__header">
+            <p class="project__index" data-mark="quantlab">01 / QuantLab</p>
+            <p class="project__type">Quantitative Research Platform</p>
+            <h3 class="project__title">QuantLab</h3>
+          </header>
+          <p class="project__desc">
+            QuantLab is a quantitative research platform for systematic trading research covering
+            market-data engineering, feature generation, event-driven backtesting, portfolio
+            construction, risk analytics, and machine-learning experimentation.
+          </p>
+          <div class="project__layout">
+            <div class="project__copy">
+              <h4>Technology</h4>
+              <p class="tech-line">
+                Python · Quantitative Research · Algorithmic Trading · Market Data · Event-Driven
+                Backtesting · Portfolio Construction · Risk Analytics · Machine Learning · FastAPI ·
+                DuckDB · SQLite · Parquet · MLflow · Optuna
+              </p>
+              <h4>Concepts</h4>
+              <ul class="concept-list">
+                <li>Market data ingestion, cleaning, and data quality</li>
+                <li>Feature engineering: technical, statistical, microstructure</li>
+                <li>Strategy research and event-driven backtesting</li>
+                <li>Transaction costs and walk-forward testing</li>
+                <li>Portfolio construction and risk analytics</li>
+                <li>VaR / CVaR, stress testing, Monte Carlo</li>
+                <li>ML experimentation and experiment tracking</li>
+              </ul>
+              <p class="project__links">
+                <a href="https://github.com/shashank-4bt/QuantLab" rel="noopener noreferrer" target="_blank">GitHub</a>
+                <a href="https://quantlab-seven.vercel.app" rel="noopener noreferrer" target="_blank">Live</a>
+              </p>
+            </div>
+            <figure class="viz viz--pipeline" aria-labelledby="quantlab-viz-caption">
+              <figcaption id="quantlab-viz-caption" class="viz__caption">
+                Illustrative research path · not live market data
+              </figcaption>
+              <svg class="series" viewBox="0 0 320 72" role="img" aria-hidden="true">
+                <path class="series__a" d="M0 48 C 24 48, 28 18, 52 22 S 88 60, 112 44 S 160 8, 188 28 S 240 62, 268 40 S 300 20, 320 26" />
+                <path class="series__b" d="M0 36 C 20 40, 40 30, 64 34 S 110 52, 140 38 S 190 16, 220 32 S 270 50, 320 42" />
+              </svg>
+              <ol class="flow-col" data-flow>
+                <li>Market data</li>
+                <li>Clean</li>
+                <li>Features</li>
+                <li>Strategy</li>
+                <li>Backtest</li>
+                <li>Portfolio</li>
+                <li>Risk</li>
+              </ol>
+              <p class="viz__note">Schematic strategy labels: signal · size · risk · not live performance</p>
+              <p class="viz__note">Illustrative series A / B · σ μ Σ notation only · not returns</p>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project project--mercury" id="project-mercury">
+          <header class="project__header">
+            <p class="project__index" data-mark="mercury">02 / Mercury</p>
+            <p class="project__type">Matching Engine</p>
+            <h3 class="project__title">Mercury</h3>
+          </header>
+          <div class="project__layout project__layout--reverse">
+            <figure class="viz viz--book" aria-labelledby="mercury-viz-caption">
+              <figcaption id="mercury-viz-caption" class="viz__caption">
+                Schematic book · illustrative prices · not a live market
+              </figcaption>
+              <div class="book">
+                <p class="book__side-label">Ask</p>
+                <div class="book__row book__row--ask"><span>102.5</span><span class="book__bar" style="--w: 42%"></span></div>
+                <div class="book__row book__row--ask"><span>102.4</span><span class="book__bar" style="--w: 61%"></span></div>
+                <div class="book__row book__row--ask"><span>102.3</span><span class="book__bar" style="--w: 33%"></span></div>
+                <p class="book__spread">Spread</p>
+                <div class="book__row book__row--bid"><span>101.9</span><span class="book__bar" style="--w: 70%"></span></div>
+                <div class="book__row book__row--bid"><span>101.8</span><span class="book__bar" style="--w: 48%"></span></div>
+                <div class="book__row book__row--bid"><span>101.7</span><span class="book__bar" style="--w: 55%"></span></div>
+                <p class="book__side-label">Bid</p>
+              </div>
+              <p class="viz__note">Price-time priority · FIFO at each level</p>
+            </figure>
+            <div class="project__copy">
+              <p class="project__desc">
+                Mercury is a simplified electronic exchange matching engine built in Modern C++20,
+                designed to model core exchange-order-book behavior.
+              </p>
+              <h4>Architecture</h4>
+              <ol class="flow-row" data-flow>
+                <li>CLI</li>
+                <li>Exchange</li>
+                <li>Matching engine</li>
+                <li>Order book</li>
+              </ol>
+              <h4>Technology</h4>
+              <p class="tech-line">C++20 · CMake · GoogleTest · Google Benchmark</p>
+              <h4>Concepts</h4>
+              <ul class="concept-list">
+                <li>Order book with price-time priority and FIFO queues</li>
+                <li>Limit and market orders; partial and full fills</li>
+                <li>Multi-level book sweeps, cancellation, modification</li>
+                <li>Integer tick arithmetic and order lifecycle</li>
+                <li>Interactive REPL and scripted replay</li>
+                <li>Testing and benchmarking</li>
+              </ul>
+              <p class="metric"><span>91</span> GoogleTest cases</p>
+              <p class="project__links">
+                <a href="https://github.com/shashank-4bt/Mercury" rel="noopener noreferrer" target="_blank">GitHub</a>
+                <a href="https://mercury-matching-engine.vercel.app" rel="noopener noreferrer" target="_blank">Live</a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--knowlyy" id="project-knowlyy">
+          <header class="project__header">
+            <p class="project__index" data-mark="knowlyy">03 / Knowlyy</p>
+            <p class="project__type">Social Entertainment Platform</p>
+            <p class="project__status">Ongoing / Coming Soon</p>
+            <h3 class="project__title">Knowlyy</h3>
+          </header>
+          <p class="project__desc">
+            Knowlyy is a social entertainment platform where friends play interactive games and
+            challenges to discover how well they know each other.
+          </p>
+          <p class="status-line">Coming soon to the Play Store</p>
+          <div class="project__layout project__layout--loop">
+            <figure class="viz viz--loop" aria-labelledby="knowlyy-viz-caption">
+              <figcaption id="knowlyy-viz-caption" class="viz__caption">Core loop</figcaption>
+              <ol class="loop">
+                <li>Create game</li>
+                <li>Invite friends</li>
+                <li>Play</li>
+                <li>Answer</li>
+                <li>Reveal</li>
+                <li>Results</li>
+                <li>Share</li>
+                <li>Challenge friends</li>
+              </ol>
+            </figure>
+            <div class="project__copy">
+              <h4>Games</h4>
+              <ul class="dense-list">
+                <li>How Well Do You Know Me?</li>
+                <li>Who Knows Me Best?</li>
+                <li>Most Likely To</li>
+                <li>Would You Rather?</li>
+                <li>Guess My Answer</li>
+                <li>Friend Predictions</li>
+                <li>Two Truths and a Lie</li>
+                <li>Who Would...?</li>
+                <li>Compatibility Games</li>
+                <li>Hot Takes</li>
+                <li>Caption Battles</li>
+                <li>Truth or Dare</li>
+                <li>Quick Party Games</li>
+              </ul>
+              <h4>Features</h4>
+              <ul class="dense-list">
+                <li>Email/password authentication, email OTP, Google authentication, GitHub authentication</li>
+                <li>Game creation, joining, invite links, multiplayer gameplay</li>
+                <li>Results, social insights, friends, groups, leaderboards</li>
+                <li>XP, achievements, statistics, shareable result cards, premium features</li>
+              </ul>
+              <p class="project__links">
+                <a href="https://github.com/shashank-4bt/Knowlyy" rel="noopener noreferrer" target="_blank">GitHub</a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--phisheye" id="project-phisheye">
+          <header class="project__header">
+            <p class="project__index" data-mark="phisheye">04 / PhishEye</p>
+            <p class="project__type">Phishing-Domain Detection</p>
+            <h3 class="project__title">PhishEye</h3>
+          </header>
+          <p class="project__desc">
+            PhishEye is a phishing-domain detection platform designed to analyze suspicious URLs and
+            identify phishing indicators through multiple layers of analysis.
+          </p>
+          <p class="context-line">
+            Team project. Represented at Lenovo LEAP Hackathon 2026.
+          </p>
+          <div class="project__layout">
+            <div class="project__copy">
+              <h4>Technology</h4>
+              <p class="tech-line">
+                React · TypeScript · Vite · Python · FastAPI · PostgreSQL · Scikit-learn · DNS
+                analysis · URL feature extraction · Threat intelligence · Machine Learning · Chrome
+                extension · REST API · Authentication · Security validation
+              </p>
+              <p class="project__links">
+                <a
+                  href="https://github.com/shashank-4bt/SIH-1454-Phishing-Domain-Detection"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+            <figure class="viz viz--layers" aria-labelledby="phisheye-viz-caption">
+              <figcaption id="phisheye-viz-caption" class="viz__caption">
+                Detection layers · schematic scoring · no accuracy claims
+              </figcaption>
+              <ol class="layers" data-flow>
+                <li>URL parsing</li>
+                <li>Domain analysis</li>
+                <li>Typosquatting</li>
+                <li>Homoglyph detection</li>
+                <li>DNS</li>
+                <li>SSL/TLS</li>
+                <li>HTTP</li>
+                <li>HTML / content</li>
+                <li>Brand impersonation</li>
+                <li>Similarity analysis</li>
+                <li>ML classification</li>
+                <li>Risk scoring</li>
+                <li class="layers__sink">Risk analysis</li>
+              </ol>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project project--fundmatch" id="project-fundmatch">
+          <header class="project__header">
+            <p class="project__index" data-mark="fundmatch">05 / FundMatch</p>
+            <p class="project__type">Startup Scheme Discovery</p>
+            <h3 class="project__title">FundMatch</h3>
+          </header>
+          <p class="project__desc">
+            FundMatch is an AI-powered platform designed to help early-stage startup founders
+            identify government startup schemes they may be eligible for and understand the steps
+            required to apply.
+          </p>
+          <p class="context-line">Hack-E-Awadh 2026, Lucknow. Built and presented within one day at the venue.</p>
+          <ol class="flow-row flow-row--wide" data-flow>
+            <li>Startup input</li>
+            <li>Eligibility</li>
+            <li>Match</li>
+            <li>Roadmap</li>
+          </ol>
+          <h4>Capabilities</h4>
+          <ul class="dense-list dense-list--inline">
+            <li>Eligibility analysis</li>
+            <li>Scheme discovery</li>
+            <li>Recommendation</li>
+            <li>AI-assisted reasoning</li>
+            <li>Application roadmap generation</li>
+            <li>Startup information processing</li>
+            <li>Full-stack web development</li>
+            <li>Rapid prototyping</li>
+          </ul>
+          <p class="project__links">
+            <a href="https://github.com/shashank-4bt/FUNDMATCH" rel="noopener noreferrer" target="_blank">GitHub</a>
+          </p>
+        </article>
+      </section>
+
+      <section class="section experiments" id="experiments" aria-labelledby="experiments-title">
+        <div class="section__head">
+          <p class="section-index">04 — Other work</p>
+          <h2 id="experiments-title">Experiments &amp; repositories</h2>
+          <p class="section__lede">Index only. No unstated functionality.</p>
+        </div>
+        <div class="ledger-wrap">
+          <table class="ledger">
+            <thead>
+              <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Repository</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Trash-Track</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/Trash-Track" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Trash-Track</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Skillyn</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/Skillyn" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Skillyn</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">PaceFlow</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/PaceFlow" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/PaceFlow</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Scenecast</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/scenecast" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/scenecast</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Essential_Webpgs</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/Essential_Webpgs" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Essential_Webpgs</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Android_Development</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/Android_Development" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/Android_Development</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">NetPulse</th>
+                <td>
+                  <a href="https://github.com/shashank-4bt/NetPulse" rel="noopener noreferrer" target="_blank">github.com/shashank-4bt/NetPulse</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <div class="section__head">
+          <p class="section-index">05 — Skills</p>
+          <h2 id="skills-title">Technical map</h2>
+          <p class="section__lede">
+            Select a skill to see repositories that use it — including work beyond the five featured
+            case studies. Empty means no repository is currently mapped, not that the skill is unused.
+          </p>
+        </div>
+        <div class="skill-map" data-skill-map>
+          <div class="skill-map__tree">
+            <section class="skill-cat" aria-labelledby="sk-lang">
+              <h3 id="sk-lang">Languages</h3>
+              <ul>
+                <li><button type="button" data-skill="C">C</button></li>
+                <li><button type="button" data-skill="C++">C++</button></li>
+                <li><button type="button" data-skill="Python">Python</button></li>
+                <li><button type="button" data-skill="Java">Java</button></li>
+                <li><button type="button" data-skill="Kotlin">Kotlin</button></li>
+                <li><button type="button" data-skill="JavaScript">JavaScript</button></li>
+                <li><button type="button" data-skill="TypeScript">TypeScript</button></li>
+                <li><button type="button" data-skill="SQL">SQL</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-fe">
+              <h3 id="sk-fe">Frontend</h3>
+              <ul>
+                <li><button type="button" data-skill="HTML">HTML</button></li>
+                <li><button type="button" data-skill="CSS">CSS</button></li>
+                <li><button type="button" data-skill="JavaScript">JavaScript</button></li>
+                <li><button type="button" data-skill="TypeScript">TypeScript</button></li>
+                <li><button type="button" data-skill="React">React</button></li>
+                <li><button type="button" data-skill="Tailwind CSS">Tailwind CSS</button></li>
+                <li><button type="button" data-skill="Vite">Vite</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-be">
+              <h3 id="sk-be">Backend &amp; APIs</h3>
+              <ul>
+                <li><button type="button" data-skill="Node.js">Node.js</button></li>
+                <li><button type="button" data-skill="Express.js">Express.js</button></li>
+                <li><button type="button" data-skill="FastAPI">FastAPI</button></li>
+                <li><button type="button" data-skill="Django">Django</button></li>
+                <li><button type="button" data-skill="REST APIs">REST APIs</button></li>
+                <li><button type="button" data-skill="JWT">JWT</button></li>
+                <li><button type="button" data-skill="Authentication & Authorization">Authentication &amp; Authorization</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-db">
+              <h3 id="sk-db">Databases &amp; Data</h3>
+              <ul>
+                <li><button type="button" data-skill="PostgreSQL">PostgreSQL</button></li>
+                <li><button type="button" data-skill="MongoDB">MongoDB</button></li>
+                <li><button type="button" data-skill="SQLite">SQLite</button></li>
+                <li><button type="button" data-skill="DuckDB">DuckDB</button></li>
+                <li><button type="button" data-skill="Prisma">Prisma</button></li>
+                <li><button type="button" data-skill="Mongoose">Mongoose</button></li>
+                <li><button type="button" data-skill="Parquet">Parquet</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-ml">
+              <h3 id="sk-ml">AI / Machine Learning</h3>
+              <ul>
+                <li><button type="button" data-skill="Scikit-learn">Scikit-learn</button></li>
+                <li><button type="button" data-skill="XGBoost">XGBoost</button></li>
+                <li><button type="button" data-skill="CatBoost">CatBoost</button></li>
+                <li><button type="button" data-skill="PyTorch">PyTorch</button></li>
+                <li><button type="button" data-skill="MLflow">MLflow</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-quant">
+              <h3 id="sk-quant">Quantitative &amp; Data Engineering</h3>
+              <ul>
+                <li><button type="button" data-skill="Quantitative Research">Quantitative Research</button></li>
+                <li><button type="button" data-skill="Algorithmic Trading">Algorithmic Trading</button></li>
+                <li><button type="button" data-skill="Event-Driven Systems">Event-Driven Systems</button></li>
+                <li><button type="button" data-skill="Backtesting">Backtesting</button></li>
+                <li><button type="button" data-skill="Portfolio Construction">Portfolio Construction</button></li>
+                <li><button type="button" data-skill="Risk Analytics">Risk Analytics</button></li>
+                <li><button type="button" data-skill="Market Data">Market Data</button></li>
+                <li><button type="button" data-skill="NumPy">NumPy</button></li>
+                <li><button type="button" data-skill="Pandas">Pandas</button></li>
+                <li><button type="button" data-skill="SciPy">SciPy</button></li>
+                <li><button type="button" data-skill="Numba">Numba</button></li>
+                <li><button type="button" data-skill="Statsmodels">Statsmodels</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-collect">
+              <h3 id="sk-collect">Data Collection &amp; Processing</h3>
+              <ul>
+                <li><button type="button" data-skill="Firecrawl">Firecrawl</button></li>
+                <li><button type="button" data-skill="Web/Data Crawling">Web/Data Crawling</button></li>
+                <li><button type="button" data-skill="API Integration">API Integration</button></li>
+                <li><button type="button" data-skill="Data Cleaning">Data Cleaning</button></li>
+                <li><button type="button" data-skill="Data Pipelines">Data Pipelines</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-ops">
+              <h3 id="sk-ops">Cloud, DevOps &amp; Delivery</h3>
+              <ul>
+                <li><button type="button" data-skill="Docker">Docker</button></li>
+                <li><button type="button" data-skill="Docker Compose">Docker Compose</button></li>
+                <li><button type="button" data-skill="Git">Git</button></li>
+                <li><button type="button" data-skill="GitHub">GitHub</button></li>
+                <li><button type="button" data-skill="GitHub Actions">GitHub Actions</button></li>
+                <li><button type="button" data-skill="CI/CD">CI/CD</button></li>
+                <li><button type="button" data-skill="Vercel">Vercel</button></li>
+              </ul>
+            </section>
+            <section class="skill-cat" aria-labelledby="sk-prac">
+              <h3 id="sk-prac">Development Practices</h3>
+              <ul>
+                <li><button type="button" data-skill="Testing">Testing</button></li>
+                <li><button type="button" data-skill="API Design">API Design</button></li>
+                <li><button type="button" data-skill="System Architecture">System Architecture</button></li>
+                <li><button type="button" data-skill="Database Design">Database Design</button></li>
+                <li><button type="button" data-skill="Security">Security</button></li>
+                <li><button type="button" data-skill="Input Validation">Input Validation</button></li>
+                <li><button type="button" data-skill="Performance Optimization">Performance Optimization</button></li>
+                <li><button type="button" data-skill="Responsive UI/UX">Responsive UI/UX</button></li>
+              </ul>
+            </section>
+          </div>
+          <div class="skill-map__rail" data-skill-rail>
+            <aside class="skill-map__detail" data-skill-detail id="skill-detail" aria-live="polite">
+              <p class="skill-map__prompt">Select a skill.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="process" aria-labelledby="process-title">
+        <div class="section__head">
+          <p class="section-index">06 — How I build</p>
+          <h2 id="process-title">How I build</h2>
+          <p class="section__lede">
+            The same sequence as the craft statement in the hero: understand what is imperfect,
+            break it into parts, and engineer a clearer path.
+          </p>
+        </div>
+        <ol class="process-flow" data-flow>
+          <li>
+            <h3>Understand</h3>
+            <p>Read the problem as it is — constraints, failure modes, and what “done” would actually look like.</p>
+          </li>
+          <li>
+            <h3>Decompose</h3>
+            <p>Split the system into load-bearing pieces: data, rules, interfaces, and the seams between them.</p>
+          </li>
+          <li>
+            <h3>Design</h3>
+            <p>Choose structures that make the next change cheaper, not only the first version faster.</p>
+          </li>
+          <li>
+            <h3>Build</h3>
+            <p>Implement the smallest complete path through the system before decorating it.</p>
+          </li>
+          <li>
+            <h3>Test</h3>
+            <p>Prove the invariants — matching, scoring, eligibility, replay — with cases that can fail loudly.</p>
+          </li>
+          <li>
+            <h3>Refine</h3>
+            <p>Cut noise, tighten the interface, and keep iterating until the design is quieter.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__intro">
+          <p class="section-index">07 — Contact</p>
+          <h2 id="contact-title">Let's build something worth understanding.</h2>
+          <p class="contact__lede">Direct channels. No form.</p>
+        </div>
+        <dl class="contact__dir">
+          <div class="contact__row">
+            <dt>Name</dt>
+            <dd>Shashank Kumar Singh</dd>
+          </div>
+          <div class="contact__row">
+            <dt>Email</dt>
+            <dd>
+              <a href="mailto:singhshashankcse@gmail.com">singhshashankcse@gmail.com</a>
+            </dd>
+          </div>
+          <div class="contact__row">
+            <dt>Phone</dt>
+            <dd>
+              <a href="tel:+917897947999">+91&nbsp;7897947999</a>
+            </dd>
+          </div>
+          <div class="contact__row">
+            <dt>GitHub</dt>
+            <dd>
+              <a href="https://github.com/shashank-4bt" rel="noopener noreferrer" target="_blank">shashank-4bt</a>
+            </dd>
+          </div>
+          <div class="contact__row">
+            <dt>LinkedIn</dt>
+            <dd>
+              <a
+                href="https://www.linkedin.com/in/shashank-kumar-singh-a8aa9930a/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >shashank-kumar-singh</a
+              >
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="site-footer__identity">
+        <p class="site-footer__name">Shashank Kumar Singh</p>
+        <p class="site-footer__role">Software Engineer · Builder · Quantitative Developer</p>
+      </div>
+      <p class="site-footer__links">
+        <a href="https://github.com/shashank-4bt" rel="noopener noreferrer" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/shashank-kumar-singh-a8aa9930a/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+        <a href="mailto:singhshashankcse@gmail.com">Email</a>
+      </p>
+      <p class="site-footer__copy">© 2026 Shashank Kumar Singh</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
